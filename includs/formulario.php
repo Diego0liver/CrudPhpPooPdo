@@ -33,7 +33,7 @@
        <div>
           <div class="form-check form-check-inline">
             <label class="form-control">
-                <input type="radio" name="inativo" value="n" />Intivo
+                <input type="radio" name="ativo" value="n" />Intivo
             </label>
           </div>      
        </div> 

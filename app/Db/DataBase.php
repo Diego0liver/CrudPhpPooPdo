@@ -55,4 +55,14 @@ class DataBase{
         return $this->conexao->lastInsertId();
     }
  
+
+    public function select($where = null, $order = null, $limit = null){
+       $where = strlen($where) ? 'WHERE '.$where : '';
+       $order = strlen($order) ? 'ORDER BY '.$order : '';
+       $limit = strlen($limit) ? 'LIMIT '.$limit : '';
+
+        $query = 'SELECT * FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
+           
+        return $this->execute($query);
+    }
 }
