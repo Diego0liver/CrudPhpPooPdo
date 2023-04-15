@@ -13,12 +13,9 @@
     <button type="button" class='btn btn-primary'>
       Voltar
     </button>    
-    </a>  
-        <button type="submit" name="excluir" class="btn btn-danger">Enviar</button>
-    
+    </a>   
+        <button type="submit" name="excluir" class="btn btn-danger">Apagar</button>
     </div>    
-
-
     </form>
 
 </main>

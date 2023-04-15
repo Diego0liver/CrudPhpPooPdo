@@ -11,11 +11,8 @@ if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
 
 $obVaga = Vaga::getVagaId($_GET['id']);
 
-
-if(isset($_POST)){
- 
+if(isset($_POST['excluir'])){
      $obVaga->excluir();
-
      header('location: index.php?status=success');
      exit;   
 }

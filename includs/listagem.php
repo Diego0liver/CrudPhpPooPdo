@@ -3,7 +3,6 @@ $resultado = '';
 foreach($vagas as $vaga){
   $resultado .=
   '<tr>
-     <td>'.$vaga->id.'</td>
      <td>'.$vaga->titulo.'</td>
      <td>'.$vaga->descricao.'</td>
      <td>'.($vaga->ativo == 's' ? 'Ativo' : 'Inativo' ).'</td>
@@ -37,7 +36,7 @@ foreach($vagas as $vaga){
  <table class="table table-dark table-striped-columns mt-3">
   <thead>
     <tr>
-      <th>Id</th>
+  
       <th>Titulo</th>
       <th>Descricao</th>
       <th>Status</th>
