@@ -65,4 +65,20 @@ class DataBase{
            
         return $this->execute($query);
     }
+
+
+    public function update($where, $values){
+        $filds = array_keys($values);
+
+        $query = 'UPDATE '.$this->table.' SET '.implode('=?,', $filds).'=? WHERE '.$where;
+    $this->execute($query, array_values($values));
+    return true;
+    }
+
+    public function delete($where){
+        $query = 'DELETE FROM '.$this->table.' WHERE '.$where;
+        $this->execute($query);
+        return true;
+    }
+
 }

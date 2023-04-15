@@ -1,16 +1,25 @@
 <?php
 require __DIR__."/vendor/autoload.php";
 
-define ("TITULO","Cadastrar vaga");
 
 use \App\Entidade\Vaga;
 
+if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
+    header('location: index.php?status=error');
+    exit;
+}
+
+$obVaga = Vaga::getVagaId($_GET['id']);
+
+
+
+
 if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
-     $obVaga = new Vaga;
+     
      $obVaga->titulo = $_POST['titulo'];
      $obVaga->descricao = $_POST['descricao'];
      $obVaga->ativo = $_POST['ativo'];
-     $obVaga->cadastra();
+     $obVaga->atualizar();
 
      header('location: index.php?status=success');
      exit;
@@ -19,4 +28,4 @@ if(isset($_POST['titulo'],$_POST['descricao'],$_POST['ativo'])){
 }
 
 include __DIR__. "/includs/header.php";
-include __DIR__. "/includs/formulario.php";
+include __DIR__. "/includs/formularioEdit.php";
